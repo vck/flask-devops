@@ -20,6 +20,19 @@ how to deploy flask web app to gcp + domain [UNFINISHED]
 the goal is to create a web that accesible using domain name, running on GCP instance.
 the web app is created with Flask (micro)framework. we're using gunicorn as wsgi server on port 8000 and proxy the connection using nginx on port 80. and the gunicorn process is watched by supervisord. 
 
+let say, we have this script as our **awesomewebappproject** 
+
+server.py
+```
+from flask import Flask
+
+app = Flask()
+
+@app.route("/")
+def index_view():
+   return "hello world"
+```
+
 # setup
 
 - install all the stack
