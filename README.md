@@ -125,16 +125,19 @@ server {
 
 - supervisord config
 
-put this config under `/etc/supervisor/conf.d/myawesomeapp
+put this config under `/etc/supervisor/conf.d/oa.conf
 
 ```
-[program:prf]
-command=/home/me/myawesomeapp/env/bin/gunicorn -b localhost:8000 -w 3 server:app
-directory=/home/me/myawesomeapp
-user=me
+[program:oa]
+command=/home/vicky/oa/env/bin/gunicorn -b localhost:8000 -w 3 server:app
+directory=/home/vicky/oa
+user=vicky
 autostart=true
 autorestart=true
 stopasgroup=true
 killasgroup=true
-
 ```
+
+- then run `sudo supervisorctl update all`
+
+
